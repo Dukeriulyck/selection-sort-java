@@ -2,9 +2,16 @@ import java.util.Scanner;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] numbers = new int[5];
+        int aux, smallestPosition, arraySize;
+        int[] numbers;
         Scanner input = new Scanner(System.in);
-        int aux, smallestPosition;
+
+        System.out.println("Insert the Array Size:");
+        arraySize = Integer.parseInt(
+            input.nextLine()  
+        );
+
+        numbers = new int[arraySize];
 
         System.out.println("Insert the desordered values:");
         for(int i = 0; i < numbers.length; i++){
@@ -23,7 +30,7 @@ public class SelectionSort {
             numbers[i] = numbers[smallestPosition];
             numbers[smallestPosition] = aux;
         }
-        System.out.println("Ordered values:");
+        System.out.println("Ok, so the ordered (by Selection Sort) values are:");
         for(int i = 0; i < numbers.length; i++){
             System.out.println(numbers[i]);
         }
